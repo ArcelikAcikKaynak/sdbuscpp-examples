@@ -34,9 +34,19 @@ set(BASIC_LAYER_SERVER
 set(BASIC_LAYER_CLIENT
     ${EXAMPLES_SRC_DIR}/basic_layer_client.cpp)
 
+set(CONVENIENCE_LAYER_SERVER
+    ${EXAMPLES_SRC_DIR}/convenience_layer_server.cpp)
+
+set(CONVENIENCE_LAYER_CLIENT
+    ${EXAMPLES_SRC_DIR}/convenience_layer_client.cpp)
+
 add_executable(basic_layer_server ${BASIC_LAYER_SERVER})
 
 add_executable(basic_layer_client ${BASIC_LAYER_CLIENT})
+
+add_executable(convenience_layer_server ${CONVENIENCE_LAYER_SERVER})
+
+add_executable(convenience_layer_client ${CONVENIENCE_LAYER_CLIENT})
 
 #----------------------------------
 # LINK LIBRARIES
@@ -44,3 +54,5 @@ add_executable(basic_layer_client ${BASIC_LAYER_CLIENT})
 
 target_link_libraries(basic_layer_server sdbus-c++ pthread)
 target_link_libraries(basic_layer_client sdbus-c++ pthread)
+target_link_libraries(convenience_layer_server sdbus-c++ pthread)
+target_link_libraries(convenience_layer_client sdbus-c++ pthread)
